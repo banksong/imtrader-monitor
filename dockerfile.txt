@@ -1,0 +1,5 @@
+- install nodejs
+- npm install -g express-generator
+- npm install ejs --save
+- npm install
+- NODE_ENV='' npm start

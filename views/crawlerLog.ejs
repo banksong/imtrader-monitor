@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+<% include templates/header.ejs %>
+<%- include('templates/search', {searchType: 'crawlerLog'}); %>
+
+<h3><%= title %></h3>
+<p>The Log path is: <%= logPath %></p>
+
+  <ul>
+    <% for (var i = (logContent.length - 20 > 0 ? (logContent.length - 20) : 0) ; i < logContent.length ; i++ ){ %>
+      <li><%= logContent[i] %></li>
+    <% } %>
+  </ul>
+
+</body>
+</html>
