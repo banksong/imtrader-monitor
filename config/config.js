@@ -4,8 +4,9 @@ module.exports = function(){
             return {"metaTraderLog" : "C:\\Users\\banksong\\AppData\\Roaming\\MetaQuotes\\Terminal\\2C3F27196F93C5FB165D928AFE4DDA53\\MQL4\\Logs",
         			"crawlerLog" : "C:\\sandbox\\wallstreet\\crawler"};
 
-        case 'production':
-            return {};
+        case 'prod':
+            return {"crawlerLog" : "C:\\sandbox\\project\\imtrader-crawler",
+        			"metaTraderLog" : ""};
 
         default:
             return {};
