@@ -5,7 +5,7 @@ module.exports = function(){
         			"crawlerLog" : "C:\\sandbox\\wallstreet\\crawler"};
 
         case 'prod':
-            return {"crawlerLog" : "C:\\sandbox\\project\\imtrader-crawler",
+            return {"crawlerLog" : "C:\\sandbox\\project\\imtrader-crawler\\crawler",
         			"metaTraderLog" : ""};
 
         default:
