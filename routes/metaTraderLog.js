@@ -6,7 +6,7 @@ var router = express.Router();
 var Config = require('../config/config');
 var fs = require('fs');
 var conf = new Config();
-var logPath = conf.metaTraderLog  + '\\20170815.log';
+var logPath = conf.metaTraderLog;
 
 /* GET about page. */
 router.get('/', function(req, res, next) {

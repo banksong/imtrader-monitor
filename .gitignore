@@ -1,0 +1,4 @@
+crawler
+node_modules
+*.log
+*.png
