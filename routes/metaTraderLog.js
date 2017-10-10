@@ -1,6 +1,12 @@
-/**
- * Created by SUCCESS\phungdinh on 4/21/15.
- */
+function StringBuffer(){ 
+	this.content = new Array; 
+	} 
+	StringBuffer.prototype.append = function( str ){ 
+	this.content.push( str ); 
+	} 
+	StringBuffer.prototype.toString = function(){ 
+	return this.content.join(""); 
+} 
 var express = require('express');
 var router = express.Router();
 var Config = require('../config/config');
@@ -18,7 +24,6 @@ buffer.append(month);
 buffer.append(day);
 buffer.append(".log");
 logPath = logPath + buffer.toString();
-
 /* GET about page. */
 router.get('/', function(req, res, next) {
 	var search = req.query.search;
