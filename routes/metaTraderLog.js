@@ -12,8 +12,12 @@ var year = dateNow.getFullYear();
 var month = dateNow.getMonth() + 1;
 month = month <10 ? "0"+month : month
 var day = dateNow.getDate();
-var mtTraderLogName = year + month + day + ".log";
-logPath = logPath + mtTraderLogName;
+var buffer = new StringBuffer();
+buffer.append(year);
+buffer.append(month);
+buffer.append(day);
+buffer.append(".log");
+logPath = logPath + buffer.toString();
 
 /* GET about page. */
 router.get('/', function(req, res, next) {
