@@ -4,13 +4,6 @@ var Config = require('../config/config');
 var fs = require('fs');
 var conf = new Config();
 var logPath = conf.crawlerLog;
-var dateNow = new Date();
-var year = dateNow.getFullYear();
-var month = dateNow.getMonth() + 1;
-month = month <10 ? "0"+month : month
-var day = dateNow.getDate();
-var mtTraderLogName = year + month + day + ".log";
-logPath = logPath + mtTraderLogName;
 
 /* GET about page. */
 router.get('/', function(req, res, next) {
