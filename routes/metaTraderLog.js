@@ -29,17 +29,17 @@ router.get('/', function(req, res, next) {
 	buffer.append(month);
 	buffer.append(day);
 	buffer.append(".log");
-	logPath = logPath + buffer.toString();
+	var newLogPath = logPath + buffer.toString();
 	if (search === undefined || search === '') {
-			var logContent =  fs.readFileSync(logPath,'utf-8');
+			var logContent =  fs.readFileSync(newLogPath,'utf-8');
 			var lines = logContent.trim().split('\n');
 	 		res.render('metaTraderLog', {
 	        title: 'This is metaTraderLog last page',
-	        logPath: logPath,
+	        logPath: newLogPath,
 	        logContent: lines
    		 });
 	} else {
-		fs.readFileSync(logPath,'utf-8').toString().split('\n').forEach(function (line) { 
+		fs.readFileSync(newLogPath,'utf-8').toString().split('\n').forEach(function (line) { 
    			 if ((line.toString()).indexOf(search) > -1) {
    			 	results.push(line.toString());
    			 }
@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
 		
 		res.render('metaTraderLog', {
 	        title: 'This is search results:',
-	        logPath: logPath,
+	        logPath: newLogPath,
 	        logContent: results
    		 });
 
