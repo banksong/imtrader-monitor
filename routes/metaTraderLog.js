@@ -13,22 +13,23 @@ var Config = require('../config/config');
 var fs = require('fs');
 var conf = new Config();
 var logPath = conf.metaTraderLog;
-var dateNow = new Date();
-var year = dateNow.getFullYear();
-var month = dateNow.getMonth() + 1;
-month = month <10 ? "0"+month : month
-var day = dateNow.getDate();
-var buffer = new StringBuffer();
-buffer.append(year);
-buffer.append(month);
-buffer.append(day);
-buffer.append(".log");
-logPath = logPath + buffer.toString();
+
 /* GET about page. */
 router.get('/', function(req, res, next) {
 	var search = req.query.search;
 	var results = [];
 	console.log(search);
+	var dateNow = new Date();
+	var year = dateNow.getFullYear();
+	var month = dateNow.getMonth() + 1;
+	month = month <10 ? "0"+month : month
+	var day = dateNow.getDate();
+	var buffer = new StringBuffer();
+	buffer.append(year);
+	buffer.append(month);
+	buffer.append(day);
+	buffer.append(".log");
+	logPath = logPath + buffer.toString();
 	if (search === undefined || search === '') {
 			var logContent =  fs.readFileSync(logPath,'utf-8');
 			var lines = logContent.trim().split('\n');
