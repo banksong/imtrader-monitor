@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 		// for ( var i = logContent.length; i > 0; i ++)
 		
 		res.render('crawlerLog', {
-	        title: 'This is search results:',
+	        title: 'USDIND AND DOW JONES',
 	        logPath: logPath,
 	        logContent: results
    		 });

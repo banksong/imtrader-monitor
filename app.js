@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var metaTraderLog = require('./routes/metaTraderLog');
 var crawlerLog = require('./routes/crawlerLog');
+var deployApp = require('./cmd')
 
 var app = express();
 
@@ -26,8 +27,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/metaTraderLog', metaTraderLog);
+app.use('/report', metaTraderLog);
 app.use('/crawlerLog', crawlerLog);
+app.use('/deploy', deployApp);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

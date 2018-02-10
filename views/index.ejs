@@ -11,7 +11,20 @@
     <h1><%= title %></h1>
     <p>Welcome to imTrader</p>
     <p><%= globalVariable %></p>
-
+    
+    <div><button id="button" type="button">Deploy</div>
+    <div id="response"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#button').click(function() {
+            $('#response').html('');
+            $.get('/deploy', function(list) {
+                $('#response').html(list); // show the list
+            });
+        });
+    });
+    </script>
  
   </body>
 </html>
